@@ -1,12 +1,13 @@
-# Gisty – Text Summarizer
+# Gisty – Instant Text Summarizer
 
-Gisty is a lightweight web app that summarizes text instantly using **Chrome’s Built-in AI (Gemini Nano)**. It provides fast, privacy-friendly summaries directly in your browser, and gracefully falls back to a local summarizer if the AI API isn’t available.
+Gisty is a lightweight web app that summarizes text instantly using **Chrome’s Built-in AI (Gemini Nano)**. It provides fast, privacy-friendly summaries directly in your browser, and gracefully falls back to a local summarizer if the AI API isn’t available. This project is my submission to Google Chrome Built-in AI Challenge 2025.
 
 ---
 
 ## **Demo**
 
 Try it out here: [Gisty-Instant Text Summarizer](https://pranav-msk.github.io/text-summarizer/)
+Watch Demo Video: [Gisty Demo Video](https://youtu.be/uKqonGszf10)
 
 ---
 
@@ -26,6 +27,7 @@ Try it out here: [Gisty-Instant Text Summarizer](https://pranav-msk.github.io/te
 2. Paste or type the text you want summarized
 3. Click **Summarize**
 4. View the summary below and click **Copy Summary** if needed
+5. or click the deployed link to preview its working
 
 ---
 
@@ -34,7 +36,7 @@ Try it out here: [Gisty-Instant Text Summarizer](https://pranav-msk.github.io/te
 - HTML
 - CSS
 - JavaScript
-- Chrome Built-in AI (Gemini Nano, Early Preview)
+- Chrome Built-in AI (Gemini Nano)
 
 ---
 
@@ -61,10 +63,19 @@ text-summarizer/
 
 ## **Author**
 
-[Pranav-MSK](https://github.com/Pranav-MSK)
+- Name: Pranav M S Krishnan 
+- Github Profile: [Pranav-MSK](https://github.com/Pranav-MSK)
 
 ---
 
-## **License**
+## License
 
-This project is open source and free to use.
+This project is licensed under the [MIT LICENSE](https://github.com/Pranav-MSK/text-summarizer/blob/main/LICENSE).
+
+---
+
+## Acknowledgments
+
+- Google Chrome Built-in AI Challenge 2025
+- Gemini Nano Documentation (Early Preview)
+- Inspiration drawn from the idea of making AI summarization accessible directly in the browser.
