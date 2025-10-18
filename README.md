@@ -6,15 +6,15 @@ Gisty is a lightweight web app that summarizes text instantly using **Chrome’s
 
 ## **Demo**
 
-Try it out here: [Gisty-Instant Text Summarizer](https://pranav-msk.github.io/text-summarizer/)
-Watch Demo Video: [Gisty Demo Video](https://youtu.be/uKqonGszf10)
+- Try it out here: [Gisty-Instant Text Summarizer](https://pranav-msk.github.io/text-summarizer/)
+- Watch Demo Video: [Gisty Demo Video](https://youtu.be/uKqonGszf10)
 
 ---
 
 ## **Features**
 
 - Summarizes any text in 3–5 sentences
-- Uses Chrome’s **Gemini Nano** for local AI summarization
+- Uses Chrome’s **Built-In AI** for local AI summarization
 - Dummy/local fallback for unsupported browsers
 - Copy summary to clipboard with one click
 - Lightweight and beginner-friendly
@@ -48,6 +48,7 @@ text-summarizer/
 ├── index.html # Main HTML page
 ├── style.css # Styles
 ├── script.js # JavaScript logic
+├── LICENSE
 └── README.md # This file
 ```
 
@@ -55,9 +56,10 @@ text-summarizer/
 
 ## **Future Improvements**
 
-- Full integration with Gemini Nano once Early Preview access is granted
-- Chrome Extension support for summarizing any webpage text
-- Additional AI features like text rewriting, tone adjustment, or translation
+- Complete integration with Gemini Nano once Early Preview access is approved  
+- Build a **Chrome Extension** version that summarizes selected webpage text  
+- Add **multi-language summarization** using the upcoming Translator API  
+- Explore **Writer** and **Rewriter APIs** for improved context-aware summaries  
 
 ---
 
@@ -65,6 +67,19 @@ text-summarizer/
 
 - Name: Pranav M S Krishnan 
 - Github Profile: [Pranav-MSK](https://github.com/Pranav-MSK)
+
+---
+
+## **Contributing**
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to fork this repository and submit a pull request.
+
+1. Fork the project  
+2. Create your feature branch (`git checkout -b feature/new-feature`)  
+3. Commit your changes (`git commit -m 'Add new feature'`)  
+4. Push to the branch (`git push origin feature/new-feature`)  
+5. Open a Pull Request  
 
 ---
 
