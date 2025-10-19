@@ -3,32 +3,33 @@ const summarizeBtn = document.getElementById("summarizeBtn");
 const inputText = document.getElementById("inputText");
 const summaryOutput = document.getElementById("summaryOutput");
 const copyBtn = document.getElementById("copyBtn");
+const statusMessage = document.getElementById("statusMessage");
 
 // Check if Chrome Built-in AI is available
 async function isAIAvailable() {
-  return ("ai" in window) && window.ai.createTextSession;
+  return ("ai" in window) && typeof window.ai.createTextSession === "function";
 }
 
-// Fallback dummy function for testing/demo
+// Dummy fallback summary (for browsers without Gemini Nano)
 async function getDummySummary(text) {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve("🔹 Dummy summary (for demo purposes): " + text.slice(0, 100) + "...");
-    }, 500);
+    }, 600);
   });
 }
 
-// Main function to summarize text
+// Main summarization function
 async function getSummary(text) {
   if (await isAIAvailable()) {
     try {
       const session = await window.ai.createTextSession();
       const prompt = `Summarize the following text in 3–5 sentences:\n\n${text}`;
       const summary = await session.prompt(prompt);
-      return summary;
+      return "🧠 (Chrome AI) " + summary;
     } catch (err) {
-      console.error(err);
-      return "❌ Error using Gemini Nano. Using dummy summary instead.";
+      console.error("Error using Chrome AI:", err);
+      return "❌ Error using Chrome AI. Using dummy summary instead:\n\n" + (await getDummySummary(text));
     }
   } else {
     return getDummySummary(text);
@@ -44,11 +45,18 @@ summarizeBtn.addEventListener("click", async () => {
   }
 
   summaryOutput.innerText = "Summarizing...";
+  statusMessage.innerText = "";
+
+  const aiAvailable = await isAIAvailable();
+  statusMessage.innerText = aiAvailable
+    ? "✅ Using Chrome’s Built-in AI (Gemini Nano)"
+    : "⚠️ Chrome AI not available — using fallback summarizer.";
+
   const summary = await getSummary(text);
   summaryOutput.innerText = summary;
 });
 
-// Handle copy summary button click
+// Handle copy button
 copyBtn.addEventListener("click", () => {
   const text = summaryOutput.innerText.trim();
   if (!text) return;
@@ -61,4 +69,12 @@ copyBtn.addEventListener("click", () => {
   }).catch(err => {
     console.error("Failed to copy text:", err);
   });
+});
+
+// On page load, show AI availability
+window.addEventListener("load", async () => {
+  const aiAvailable = await isAIAvailable();
+  statusMessage.innerText = aiAvailable
+    ? "✅ Chrome AI ready (Gemini Nano detected)"
+    : "⚠️ Chrome AI not detected — using fallback mode.";
 });
